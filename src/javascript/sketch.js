@@ -70,8 +70,8 @@ window.onload = function () {
                 // Update position based on velocity and acceleration
                 this.vx += this.ax;
                 this.vy += this.ay;
-                this.vx *= 0.7; // Damping factor
-                this.vy *= 0.7;
+                this.vx *= 0.6; // Damping factor
+                this.vy *= 0.6;
                 this.x += this.vx;
                 this.y += this.vy;
                 this.ax = 0;
@@ -91,7 +91,7 @@ window.onload = function () {
 
         show() {
             // Draw glow effect
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 11; i++) {
                 c.beginPath();
                 c.arc(this.x, this.y, att_size * (i / 4) * (i / 4), 0, 2 * Math.PI);
                 c.fillStyle = `hsla(${this.color},${Math.pow(1 - i / 10, 2)})`;
@@ -169,7 +169,7 @@ window.onload = function () {
 
     // Configuration
     let LPAtt = 36,
-        att_num = 40,
+        att_num = 50,
         att_spd = 0.1,
         segment_length = 6,
         segment_num = 120,
